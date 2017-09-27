@@ -1,0 +1,121 @@
+.LEY_index3{
+	width: 100%;
+	position: relative;
+	height: 318px;
+}
+.LEY_footer_box{
+	background: rgb(27, 27, 27);
+	color:#fff;
+	text-align: center;
+	height: 330px;
+	width: 100%;
+	position: absolute;
+}
+.LEY_footer_box .square{
+	display: block;
+	width: 8px;
+    height: 8px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(145, 1, 12);
+    border-image: initial;
+    margin: 15px 10px 0px;
+    float: left;
+
+}
+.LEY_footer_box .brand_desc{
+	text-align: center;
+	font-size: 14px;
+	width: 200px;
+	margin:0 auto;
+}
+.LEY_footer_box .brand_desc p{
+	float: left;
+	line-height: 37px;
+}
+.LEY_footer_box .brand_desc:after{
+	content: "";
+	display:block;
+    clear: both;
+}
+.LEY_footer_box .icon{
+	display: block;
+	width: 80px;
+	height: 123px;
+	margin:0 auto;
+	margin-top:60px;
+	position: relative;
+}
+.LEY_footer_box .icon img{
+	position: absolute;
+	
+}
+.LEY_footer_box .icon img:nth-child(1){
+	left: 0;
+	top:0;
+}
+.LEY_footer_box .icon img:nth-child(2){
+	right: 0;
+	bottom:0;
+}
+.LEY_footer_box .f-cta{
+	font-size: 12px;
+}
+.LEY_footer_box .f-cta .tel{
+	display: block;
+	line-height: 30px;
+
+
+}
+.LEY_footer_box .f-cta .tel-block{
+	
+}
+.LEY_footer_box .f-cta .tel p{
+	float: left;
+	line-height: 30px;
+	cursor:pointer;
+}
+.LEY_footer_box .f-cta .tel_ico{
+	display: block;
+	width: 20px;
+	height: 20px;
+	background: url(../img/footer/f-cta.png) no-repeat;
+	float: left;
+	line-height: 30px;
+	cursor: pointer;
+}
+.LEY_footer_box .f-cta .tel_ico:hover{
+    
+     
+}
+.LEY_footer_box .f-cta{
+	width: 668px;
+	margin:0 auto;
+	height: 30px;
+	margin-top:20px;
+}
+.LEY_footer_box .f-cta .addr{
+	display: block;
+	float: left;
+}
+.LEY_footer_box .f-cta .addr p{
+	line-height: 30px;
+}
+@keyframes move{
+    from{background-position-y:0px}
+    to{background-position-y:-25px}
+}
+@keyframes moveTo{
+    from{background-position-y:-25px}
+    to{background-position-y:0px}
+}
+.LEY_mask{
+	display: none;
+}
+.LEY_footer_box .f-txt{
+	font-size: 10px;
+	line-height: 60px;
+}
+.LEY_footer_box .f-txt a{
+	color: #fff;
+}

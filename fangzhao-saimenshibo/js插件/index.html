@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script></script>
+	<style>    
+	 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,
+    button,textarea,p,blockquote,th,td{
+         margin: 0;
+         padding: 0;
+    }
+    body{
+           font-size: 12px;
+            font-family: "微软雅黑", arial;
+    }
+    i,em{
+        font-style: normal;
+    }
+    a{
+        text-decoration: none;
+    }
+    img{
+        border: none;
+    }
+    select,input,img,select{
+        vertical-align:middle;
+    }
+    ol,ul{
+        list-style: none;
+    } 
+    table{
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    .hide{
+        display: none;
+    }
+    .clearfix{
+        overflow: auto;
+        _height: 1%;
+    }
+    #wrapper{
+        overflow: hidden;
+    }
+    .nav-box{
+        float: left;
+        width: 170px;
+        height: 100%;
+        background: #3b3c3e;
+        position: relative;
+        overflow: hidden;
+    }
+    .nav-box ul.slide-bar{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    .nav-box ul.slide-bar li a{
+        display: block;
+        width: 100%;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .nav-box ul.slide-bar li a span{
+        color: #adafb1;
+    }
+    .nav-box ul.slide-bar li a i.icon{
+        float: right;
+        margin: 27px 20px 0 0;
+    }
+    .nav-box ul.slide-bar li a:hover{
+        background: #4e4e4f;
+    }
+    ul.second-nav li a.current{
+        background: #4e4e4f;
+    }
+    .nav-box ul.slide-bar li a.current span{
+        color: #efefef;
+    }
+    i.icon-updown{
+        width: 9px;
+        height: 6px;
+        background: url(img/icons.png) no-repeat -350px -35px;}
+    i.icon-right{
+        width: 6px;
+        height: 7px;
+        background: url(img/icons.png) no-repeat -770px 0;
+    }
+    .current>i.icon-updown{
+        background: url(img/icons.png) no-repeat -385px -35px;
+    }
+    .current>i.icon-right{
+        background: url(img/icons.png) no-repeat -795px 0;
+    }
+    .nav-box ul.slide-bar li ul.second-nav{
+        background: #252525;
+    }
+</style>
+</head>
+<body>
+	<div id="wrapper">
+<div class="nav-box">
+    <ul class="slide-bar">
+        <li>
+            <a class="first-nav">
+                <span>首页</span>
+                <i class="icon icon-updown"></i>
+            </a>
+            <ul class="second-nav hide">
+                <li>
+                    <a>
+                        <span>首页1</span>
+                        <i class="icon icon-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <span>首页2</span>
+                        <i class="icon icon-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <span>首页3</span>
+                        <i class="icon icon-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <span>首页4</span>
+                        <i class="icon icon-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class="first-nav">
+                <span>menu1</span>
+                <i class="icon icon-updown"></i>
+            </a>
+            <ul class="second-nav hide">
+                <li>
+                    <a>
+                        <span>menu1-1</span>
+                        <i class="icon icon-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <span>menu1-2</span>
+                        <i class="icon icon-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <span>menu1-3</span>
+                        <i class="icon icon-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <span>menu1-4</span>
+                        <i class="icon icon-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        ...
+    </ul>
+</div>
+</div>  
+<script>
+    $(document).ready(function(){
+        //导航条固定高度
+        var windowH = $(window).height();
+        $("#wrapper").height(windowH);
+        var navBoxH = $(".nav-box").height(),
+            slideBarH;
+        $(".slide-bar a").on("click", function(){
+            var $this = $(this);
+            if($this.hasClass("first-nav")){   //一级菜单点击事件
+                $(".first-nav").removeClass("current");
+                $this.addClass("current");
+                var secondNav = $this.next("ul.second-nav");
+                if(secondNav.css("display") == "none"){
+                    $("ul.second-nav").slideUp(300);
+                    secondNav.slideDown(300, function(){
+                        slideBarH = $(".slide-bar").height();
+                        slideMove(navBoxH,slideBarH);
+                    });
+                }
+                else{
+                    secondNav.slideUp(300, function(){
+                        $this.removeClass("current");
+                        slideMove(1,0);
+                    });
+                }
+            }
+            else{    //二级菜单点击事件
+                $(".second-nav a").removeClass("current");
+                $this.addClass("current");
+//                  function(){
+//                      do something...
+//                  }
+            }
+        });
+    });
+
+    //导航栏滚动
+    function slideMove(parentH,sonH){
+        var switch1 = 0,
+            move = true,
+            slideWidth = sonH - parentH,
+            top;
+        $(".slide-bar").off("mousewheel");  //解除绑定
+        if(slideWidth > 0 && move == true){  //当菜单高度超出限定高度，绑定滚动事件
+            $(".slide-bar").on("mousewheel", function(event, delta){
+                top = $(this).css("top");
+                if(delta == "-1" && switch1 != delta){  //滚轮向下滚动，并且不是连续向下滚动
+                    move = false;  
+                    $(this).stop();  //立即停止正在执行的动画
+                    $(this).animate({top: -slideWidth+"px"}, 200, function(){  //执行新动画
+                        move = true;
+                    });
+                }
+                else if (delta == "1" && switch1 != delta){  //滚轮向上滚动，且不是连续向上滚动
+                    move = false;
+                    $(this).stop();
+                    $(this).animate({top: "0"}, 200, function(){
+                        move = true;
+                    });
+                }
+                switch1 = delta;  //禁止连续同向滚动
+            })
+        }
+        else{  //菜单高度小于限定高度时，解除绑定，回到正常位置
+            $(".slide-bar").off("mousewheel");
+            $('.slide-bar').animate({top: "0"}, 200);
+        }
+
+    }
+</script>
+</body>
+</html>

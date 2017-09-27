@@ -1,0 +1,254 @@
+           * {
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul li {
+				list-style: none;
+			}
+			a{
+				text-decoration:none;
+			}
+			.LEY_main {
+				position: fixed;
+				width: 100%;
+				top: 0px;
+			}
+			.LEY_float{
+				width: 100%;
+			}
+			.LEY_float .addbg{
+				background:#000;
+			}
+			.LEY_left_txt{
+				position: fixed;
+				width: 710px;
+				height: 210px;
+				z-index: 99;
+				background: rgba(0,0,0,0.5);
+				top:35.8%;
+				left:4%;
+			}
+			.LEY_float .LEY_carousel{
+				width: 100%;
+				height: 100%;
+				color: #fff;
+			}
+			.LEY_carousel li{
+				padding:36px 50px 0 50px;
+			}
+			.LEY_carousel li .couse_top{
+				font-size: 28px;
+				margin-bottom: 28px;
+				line-height: 28px;
+			}
+			.LEY_carousel li .couse_bottom{
+				font-size: 13px;
+				line-height: 25px;
+			}
+			.LEY_carousel li:nth-child(2),.LEY_carousel li:nth-child(3){
+				display: none;
+			}
+			.LEY_number{
+				display: none;
+				height: 318px;
+			}
+			.LEY_number .LEY_NL,.LEY_number .LEY_txt{
+				float: left;
+			}
+			.LEY_number .LEY_NL{
+				width: 108px;
+				height: 100%;
+				overflow: hidden;
+			}
+			.LEY_number .LEY_txt{
+				width: 100px;
+				height: 100%;
+				overflow: hidden;
+			}
+			.LEY_NL .number-box{
+				width: 100%;
+				
+				
+				
+			}
+			.LEY_NL .number-box li{
+				width: 100%;
+				height: 318px;
+				overflow: hidden;
+			}
+			.LEY_NL .number-box li img{
+				width: 100%;
+				margin-top:45px;
+			}
+			.LEY_number .LEY_txt .txt-box .txt_desc{
+				width: 100%;
+				height: 318px;
+				position: relative;
+			} 
+			.LEY_number .LEY_txt .p-txt{
+				
+				color: #fff;
+				padding-top:85px;
+				
+			}
+			.LEY_number .LEY_txt .p-txt p{
+				font-size: 16px;
+				line-height: 16px;
+			}
+			.LEY_number .LEY_txt .p-txt .float_line{
+				display: block;
+				width: 35px;
+				height: 4px;
+				background: #fff;
+				margin: 18px 0 7px 0;;
+			}
+			.LEY_number .LEY_txt .p-txt .en{
+				font-size:12px;
+				line-height: 12px;
+			}
+			.LEY_number .page-icon-number{
+				position: absolute;
+				left:0px;
+				bottom: 20px;
+			}
+			.LEY_number .LEY_txt .page-icon-number:after{
+				content: "";
+				display: block;
+				clear: both;
+				position: ;
+			}
+			.LEY_number .page-icon-number li{
+				float: left;
+				font-size: 12px;
+				position: relative;
+				padding: 0 1px;
+				margin-left: 8px;
+				cursor: pointer;
+			}
+			.bot_line{
+			position: absolute;
+		    left: 0;
+		    right: 0;
+		    bottom: 0;
+		    height: 2px;
+		    background: #fff;
+		    }
+		    .LEY_float .LEY_right_txt{
+		    	position: fixed;
+		    	width: 10.4%;
+		    	right: 0;
+		    	bottom: 0;
+		    	
+		    	z-index: 199;
+		    	overflow: hidden;
+		    	
+		    }
+		    .LEY_right_txt .menu_icon{
+		    	width: 35px;
+		    	height: 20px;
+		    	position: absolute;
+		    	left: 20px;
+		    	z-index: 299;
+		    	top:5.5%;
+		    	cursor: pointer;
+		    }
+		    .LEY_right_txt .menu_icon .LEY_icon{
+		    	background: #000;
+		    }
+		    .LEY_right_txt .menu_icon .LEY_icon1{
+		       top:0px;
+		       width:100%;
+		       background: #000;
+		       height: 4px;
+		       position: absolute;
+		       /*transform: rotate(225deg);*/
+		       transition:all 0.6s cubic-bezier(0.23,1,0.32,1);
+		    }
+		    @keyframes rotate1{
+		    	from{transform: rotate(0deg);}
+		    	to{transform: rotate(225deg);}
+		    }
+		    .LEY_right_txt .menu_icon .rorate1-active{
+		    	animation: rotate1 1s 0 linear;
+		    } 
+		    .LEY_right_txt .menu_icon .LEY_icon2{
+		       top:16px;
+		       width:100%;
+		       background: #000;
+		       height: 4px;
+		       position: absolute;
+		       transition:all 0.6s cubic-bezier(0.23,1,0.32,1);
+		       /*transform: rotate(-225deg);*/
+		    }
+		     @keyframes rotate2{
+		    	from{transform: rotate(0deg);}
+		    	to{transform: rotate(-225deg);}
+		    }
+		    .LEY_right_txt .menu_icon .rorate2-active{
+		    	animation: rotate2 1s 0 linear;
+		    } 
+		    .menu-content{
+		    	background: #fff;
+		    	position: absolute;
+		    	left: 0px;
+		    	top:0px;
+		    	bottom: 110px;
+		    	overflow: hidden;
+		    	width: 100%;
+		    }
+		    .menu-nav{
+		    	padding: 50.5% 20px 0 20px;
+		    	
+		    }
+		    .menu-nav a{
+		    	text-decoration: none;
+		    	display: block;
+			    color: #000;
+			    line-height:28px;
+			    padding: 8px 0;
+		    }
+		    .menu-nav2{
+		    	display: none;
+		    }
+		    .menu-nav2 a{
+		    	margin-left: 50px;
+		    	color:#fff;
+		    }
+		    .LEY_nav_box{
+		    	position: fixed;
+			    width: 22.93%;
+			    padding-right: 10.4%;
+			    bottom: 0;
+			    right: 0;
+			    color: #fff;
+			    z-index: 199;
+		    }
+		    .LEY_nav_box .LEY_move{
+		    	height: 110px;
+		    	width: 100%;
+		    	background: #C80000;
+		    }
+		    .LEY_nav_box .nav{
+		    	display: none;
+		    }
+		    .LEY_nav_box a{
+		    	font-size: 16px;
+		    	line-height:80px;
+		    	text-decoration: none;
+		    	padding: 0 8%;
+		    	color: #fff;
+		    }
+		    .LEY_logo_box{
+		    	position: fixed;
+			    z-index: 99;
+			    bottom: 0;
+			    left: 0;    
+			    height:66px;
+			}
+			.LEY_logo_box .bg{
+				display:block;
+				width:100%;
+				background: #868686;
+				height:100%
+			}
